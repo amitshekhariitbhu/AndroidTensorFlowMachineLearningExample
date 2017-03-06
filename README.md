@@ -13,6 +13,7 @@
   <img src="https://raw.githubusercontent.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample/master/assets/pen_example.png" width="250">
   <img src="https://raw.githubusercontent.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample/master/assets/wallet_example.png" width="250">
 </p>
+<img src=https://raw.githubusercontent.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample/master/assets/sample_combined.png >
 <br>
 <br>
 
