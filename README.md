@@ -1,6 +1,12 @@
 # Android TensorFlow Machine Learning Example
+[![Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)](https://mindorks.com/open-source-projects)
 
 <img src=https://raw.githubusercontent.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample/master/assets/ml_android.png >
+
+##  About Android TensorFlow Machine Learning Example
+* This is an example project for integrating [TensorFlow](https://github.com/tensorflow/tensorflow) into Android application
+* How to build TensorFlow project to use with Android project.
+* How to build TensorFlow library(.so file and jar file) to use with Android Application.
 
 ###[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
