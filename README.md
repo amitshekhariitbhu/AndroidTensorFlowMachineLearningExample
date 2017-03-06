@@ -9,6 +9,8 @@
 * How to build TensorFlow library(.so file and jar file) to use with Android Application.
 * This project include an example for object detection for an image taken from camera using TensorFlow library.
 
+# [Read this article. It describes everything about building TensorFlow for Android.](https://blog.mindorks.com/android-tensorflow-machine-learning-example-ff0e9b2654cc)
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample/master/assets/pen_example.png" width="250">
   <img src="https://raw.githubusercontent.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample/master/assets/wallet_example.png" width="250">
@@ -16,8 +18,6 @@
 <img src=https://raw.githubusercontent.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample/master/assets/sample_combined.png >
 <br>
 <br>
-
-# [Read this article. It describes everything about building TensorFlow for Android.](https://blog.mindorks.com/android-tensorflow-machine-learning-example-ff0e9b2654cc)
 
 ###[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
