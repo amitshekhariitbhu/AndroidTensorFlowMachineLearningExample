@@ -7,6 +7,9 @@
 * This is an example project for integrating [TensorFlow](https://github.com/tensorflow/tensorflow) into Android application
 * How to build TensorFlow project to use with Android project.
 * How to build TensorFlow library(.so file and jar file) to use with Android Application.
+* This project include an example for object detection for an image taken from camera using TensorFlow library.
+
+# [Read this article. It describes everything about building TensorFlow for Android.](https://blog.mindorks.com/android-tensorflow-machine-learning-example-ff0e9b2654cc)
 
 ###[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
