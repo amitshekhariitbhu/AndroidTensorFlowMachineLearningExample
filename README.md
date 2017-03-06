@@ -1,5 +1,6 @@
 # Android TensorFlow Machine Learning Example
 
+<img src=https://raw.githubusercontent.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample/master/assets/ml_android.png >
 
 ###[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
