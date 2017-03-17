@@ -28,7 +28,7 @@
 ### Credits
 * The classifier example has been taken from Google TensorFlow example.
 
-###[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
+[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
 ### License
 ```
