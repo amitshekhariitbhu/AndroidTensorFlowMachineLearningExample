@@ -25,6 +25,9 @@
 ### Find this project useful ? :heart:
 * Support it by clicking the :star: button on the upper right of this page. :v:
 
+### Credits
+* The classifier example has been taken from Google TensorFlow example.
+
 ###[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
 ### License
