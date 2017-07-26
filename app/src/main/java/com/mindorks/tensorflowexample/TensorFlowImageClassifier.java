@@ -41,7 +41,7 @@ import java.util.Vector;
  */
 public class TensorFlowImageClassifier implements Classifier {
 
-    private static final String TAG = "TensorFlowImageClassifier";
+    private static final String TAG = "TensorFlowClassifier";
 
     // Only return this many results with at least this confidence.
     private static final int MAX_RESULTS = 3;
