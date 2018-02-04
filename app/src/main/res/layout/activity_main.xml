@@ -25,7 +25,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.mindorks.tensorflowexample.MainActivity">
 
-    <com.flurgle.camerakit.CameraView
+    <com.wonderkiln.camerakit.CameraView
         android:id="@+id/cameraView"
         android:layout_width="300dp"
         android:layout_height="300dp"

@@ -17,7 +17,6 @@
 package com.mindorks.tensorflowexample;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
@@ -26,8 +25,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.flurgle.camerakit.CameraListener;
-import com.flurgle.camerakit.CameraView;
+import com.wonderkiln.camerakit.CameraKitError;
+import com.wonderkiln.camerakit.CameraKitEvent;
+import com.wonderkiln.camerakit.CameraKitEventListener;
+import com.wonderkiln.camerakit.CameraKitImage;
+import com.wonderkiln.camerakit.CameraKitVideo;
+import com.wonderkiln.camerakit.CameraView;
 
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -64,12 +67,21 @@ public class MainActivity extends AppCompatActivity {
         btnToggleCamera = (Button) findViewById(R.id.btnToggleCamera);
         btnDetectObject = (Button) findViewById(R.id.btnDetectObject);
 
-        cameraView.setCameraListener(new CameraListener() {
+        cameraView.addCameraKitListener(new CameraKitEventListener() {
             @Override
-            public void onPictureTaken(byte[] picture) {
-                super.onPictureTaken(picture);
+            public void onEvent(CameraKitEvent cameraKitEvent) {
 
-                Bitmap bitmap = BitmapFactory.decodeByteArray(picture, 0, picture.length);
+            }
+
+            @Override
+            public void onError(CameraKitError cameraKitError) {
+
+            }
+
+            @Override
+            public void onImage(CameraKitImage cameraKitImage) {
+
+                Bitmap bitmap = cameraKitImage.getBitmap();
 
                 bitmap = Bitmap.createScaledBitmap(bitmap, INPUT_SIZE, INPUT_SIZE, false);
 
@@ -78,6 +90,12 @@ public class MainActivity extends AppCompatActivity {
                 final List<Classifier.Recognition> results = classifier.recognizeImage(bitmap);
 
                 textViewResult.setText(results.toString());
+
+            }
+
+            @Override
+            public void onVideo(CameraKitVideo cameraKitVideo) {
+
             }
         });
 
