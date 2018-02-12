@@ -18,7 +18,7 @@ package com.mindorks.tensorflowexample;
 
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
-import android.os.Trace;
+import android.support.v4.os.TraceCompat;
 import android.util.Log;
 
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
@@ -41,7 +41,7 @@ import java.util.Vector;
  */
 public class TensorFlowImageClassifier implements Classifier {
 
-    private static final String TAG = "TensorFlowImageClassifier";
+    private static final String TAG = "ImageClassifier";
 
     // Only return this many results with at least this confidence.
     private static final int MAX_RESULTS = 3;
@@ -62,6 +62,8 @@ public class TensorFlowImageClassifier implements Classifier {
     private String[] outputNames;
 
     private TensorFlowInferenceInterface inferenceInterface;
+
+    private boolean runStats = false;
 
     private TensorFlowImageClassifier() {
     }
@@ -105,10 +107,7 @@ public class TensorFlowImageClassifier implements Classifier {
         }
         br.close();
 
-        c.inferenceInterface = new TensorFlowInferenceInterface();
-        if (c.inferenceInterface.initializeTensorFlow(assetManager, modelFilename) != 0) {
-            throw new RuntimeException("TF initialization failed");
-        }
+        c.inferenceInterface = new TensorFlowInferenceInterface(assetManager, modelFilename);
         // The shape of the output is [N, NUM_CLASSES], where N is the batch size.
         int numClasses =
                 (int) c.inferenceInterface.graph().operation(outputName).output(0).shape().size(1);
@@ -133,9 +132,9 @@ public class TensorFlowImageClassifier implements Classifier {
     @Override
     public List<Recognition> recognizeImage(final Bitmap bitmap) {
         // Log this method so that it can be analyzed with systrace.
-        Trace.beginSection("recognizeImage");
+        TraceCompat.beginSection("recognizeImage");
 
-        Trace.beginSection("preprocessBitmap");
+        TraceCompat.beginSection("preprocessBitmap");
         // Preprocess the image data from 0-255 int to normalized float based
         // on the provided parameters.
         bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(), bitmap.getHeight());
@@ -145,23 +144,23 @@ public class TensorFlowImageClassifier implements Classifier {
             floatValues[i * 3 + 1] = (((val >> 8) & 0xFF) - imageMean) / imageStd;
             floatValues[i * 3 + 2] = ((val & 0xFF) - imageMean) / imageStd;
         }
-        Trace.endSection();
+        TraceCompat.endSection();
 
         // Copy the input data into TensorFlow.
-        Trace.beginSection("fillNodeFloat");
-        inferenceInterface.fillNodeFloat(
-                inputName, new int[]{1, inputSize, inputSize, 3}, floatValues);
-        Trace.endSection();
+        TraceCompat.beginSection("feed");
+        inferenceInterface.feed(
+                inputName, floatValues, new long[]{1, inputSize, inputSize, 3});
+        TraceCompat.endSection();
 
         // Run the inference call.
-        Trace.beginSection("runInference");
-        inferenceInterface.runInference(outputNames);
-        Trace.endSection();
+        TraceCompat.beginSection("run");
+        inferenceInterface.run(outputNames, runStats);
+        TraceCompat.endSection();
 
         // Copy the output Tensor back into the output array.
-        Trace.beginSection("readNodeFloat");
-        inferenceInterface.readNodeFloat(outputName, outputs);
-        Trace.endSection();
+        TraceCompat.beginSection("fetch");
+        inferenceInterface.fetch(outputName, outputs);
+        TraceCompat.endSection();
 
         // Find the best classifications.
         PriorityQueue<Recognition> pq =
@@ -186,13 +185,13 @@ public class TensorFlowImageClassifier implements Classifier {
         for (int i = 0; i < recognitionsSize; ++i) {
             recognitions.add(pq.poll());
         }
-        Trace.endSection(); // "recognizeImage"
+        TraceCompat.endSection(); // "recognizeImage"
         return recognitions;
     }
 
     @Override
     public void enableStatLogging(boolean debug) {
-        inferenceInterface.enableStatLogging(debug);
+        runStats = debug;
     }
 
     @Override

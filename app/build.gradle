@@ -42,6 +42,6 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:27.0.2'
     testCompile 'junit:junit:4.12'
-    compile files('libs/libandroid_tensorflow_inference_java.jar')
+    compile 'org.tensorflow:tensorflow-android:1.2.0'
     compile 'com.wonderkiln:camerakit:0.13.1'
 }
