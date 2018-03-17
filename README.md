@@ -14,6 +14,8 @@
 
 # [Read this article. It describes everything about building TensorFlow for Android.](https://blog.mindorks.com/android-tensorflow-machine-learning-example-ff0e9b2654cc)
 
+# [Check the Android TensorFlow Lite Machine Learning Example.](https://github.com/amitshekhariitbhu/Android-TensorFlow-Lite-Example)
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample/master/assets/keyboard_example.png" width="250">
   <img src="https://raw.githubusercontent.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample/master/assets/pen_example.png" width="250">
