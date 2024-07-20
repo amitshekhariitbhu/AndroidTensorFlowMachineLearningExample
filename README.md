@@ -6,7 +6,7 @@
 * How to build TensorFlow library(.so file and jar file) to use with Android Application.
 * This project include an example for object detection for an image taken from camera using TensorFlow library.
 
-## [My Personal Blog - amitshekhar.me](https://amitshekhar.me/blog) - High-quality content to learn Android concepts.
+## [Outcome School Blog](https://outcomeschool.com/blog) - High-quality content to learn Android concepts.
 
 # [Check the Android TensorFlow Lite Machine Learning Example.](https://github.com/amitshekhariitbhu/Android-TensorFlow-Lite-Example)
 
