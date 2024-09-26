@@ -41,7 +41,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:27.0.2'
-    testCompile 'junit:junit:4.12'
-    compile 'org.tensorflow:tensorflow-android:1.2.0'
-    compile 'com.wonderkiln:camerakit:0.13.1'
+    testCompile 'junit:junit:4.13'
+    compile 'org.tensorflow:tensorflow-android:1.3.0'
+    compile 'com.wonderkiln:camerakit:0.13.2'
 }
