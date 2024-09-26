@@ -1,3 +1,4 @@
+# These are those who interested to learn machine learnig in tensorflow 
 # Android TensorFlow Machine Learning Example
 
 ##  About Android TensorFlow Machine Learning Example
